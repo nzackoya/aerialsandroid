@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white">
+    <LinearLayout
+            android:layout_height="100dp"
+            android:minHeight="100dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:weightSum="2">
+
+            <TextView android:id="@+id/label"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:textSize="30dp"
+                      android:gravity="top|left"
+                      android:textColor="@android:color/black"
+                      android:text="@string/name"
+                      android:background="@android:color/white"
+                      android:layout_weight="1"
+                    />
+        <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical|left"
+                android:layout_weight="1">
+            <TextView android:id="@+id/name"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center_vertical|left"
+                      android:textColor="@android:color/black"
+                      android:background="@android:color/white"
+                      android:textSize="30dp"
+                    />
+            <EditText android:id="@+id/value"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center_vertical|left"
+                      android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+
