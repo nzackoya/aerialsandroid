@@ -7,7 +7,7 @@
     <string name="new_item">New</string>
     <string name="edit">Edit</string>
     <string name="remove">Remove</string>
-    <string name="close_label">Close</string>
-    <string name="error_try_again">Error, please try again later</string>
-    <string name="attention_label">Attention:</string>
+    <string name="close_label">Закрыть</string>
+    <string name="error_try_again">Произошла ошибка, попробуйте еще раз</string>
+    <string name="attention_label">Внимание:</string>
 </resources>
