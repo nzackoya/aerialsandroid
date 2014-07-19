@@ -11,6 +11,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.feed.AtomFeedHttpMessageConverter;
+import org.springframework.http.converter.feed.RssChannelHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.SimpleXmlHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -48,6 +50,8 @@ public class JsonSpiceService extends SpringAndroidSpiceService {
         FormHttpMessageConverter formHttpMessageConverter = new FormHttpMessageConverter();
         StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter();
         SimpleXmlHttpMessageConverter xmlConverter = new SimpleXmlHttpMessageConverter();
+        RssChannelHttpMessageConverter rssChannelHttpMessageConverter = new RssChannelHttpMessageConverter();
+        AtomFeedHttpMessageConverter atomFeedHttpMessageConverter = new AtomFeedHttpMessageConverter();
 
         final List<HttpMessageConverter<?>> listHttpMessageConverters = restTemplate.getMessageConverters();
 
@@ -55,6 +59,8 @@ public class JsonSpiceService extends SpringAndroidSpiceService {
         listHttpMessageConverters.add(formHttpMessageConverter);
         listHttpMessageConverters.add(stringHttpMessageConverter);
         listHttpMessageConverters.add(xmlConverter);
+        listHttpMessageConverters.add(rssChannelHttpMessageConverter);
+        listHttpMessageConverters.add(atomFeedHttpMessageConverter);
         restTemplate.setMessageConverters(listHttpMessageConverters);
         return restTemplate;
     }
