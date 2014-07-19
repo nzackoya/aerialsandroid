@@ -16,7 +16,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DATABASE_NAME = "aerials.db";
 
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
     private static volatile DatabaseHelper instance;
 
@@ -49,8 +49,14 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         wave1.setTitle("Vesti");
         wave1.setCategory(category);
 
+        Wave wave2 = new Wave();
+        wave2.setUrl("http://www.kommersant.ru/RSS/main.xml", context);
+        wave2.setTitle("Kommersant");
+        wave2.setCategory(category);
+
         try {
             DatabaseHelper.getHelper().getDao(Wave.class).create(wave1);
+            DatabaseHelper.getHelper().getDao(Wave.class).create(wave2);
         } catch (SQLException e) {
             e.printStackTrace();
         }
